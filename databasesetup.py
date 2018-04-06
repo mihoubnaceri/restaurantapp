@@ -21,6 +21,13 @@ class Restaurant(Base):
         Integer,
         primary_key=True
     )
+    @property
+    def serialize(self):
+        return {
+            "name":self.name,
+            "id":self.id,
+
+        }
 
 
 class MenuItem(Base):
@@ -48,7 +55,17 @@ class MenuItem(Base):
     description = Column(
         String(250)
     )
+    @property
+    def serialize(self):
+        return {
+            "name":self.name,
+            "price":self.price,
+            "course":self.course,
+            "description":self.description,
+            "restaurant_id":self.restaurant_id,
+            "id":self.id,
 
+        }
 
 
 

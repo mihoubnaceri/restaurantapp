@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <h1> Are You sure you want to Delete This restaurant?</h1>
+    <form method="POST" action="{{url_for('delete_resto',restaurant_id=restaurant.id)}}">
+
+      <input type="submit" value="Delete">
+    </form>
+  </body>
+</html>
