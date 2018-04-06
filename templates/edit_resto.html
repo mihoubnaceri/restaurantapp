@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <h1> Edit Restaurant!</h1>
+    <form method="POST" action="{{url_for('edit_resto',restaurant_id=restaurant.id)}}">
+      <input type="text" placeholder="{{restaurant.name}}" name="resto">
+      <input type="submit" value="rename">
+    </form>
+  </body>
+</html>

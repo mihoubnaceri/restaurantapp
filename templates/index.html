@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Available Restaurants in app! <a href="{{url_for('add_resto')}}">Add restaurant</a></h1>
+    <ul>
+
+      {% for restaurant in restaurants %}
+
+        <a href="#">{{restaurant.name}}</a>|<a href="{{url_for('edit_resto',restaurant_id=restaurant.id)}}">Edit</a><br>
+        <hr>
+      {% endfor %}
+
+    </ul>
+
+  </body>
+</html>
