@@ -12,6 +12,7 @@ session = DBSession()
 
 
 @app.route("/")
+@app.route("/restaurants/")
 def index():
     restaurants = session.query(Restaurant).all()
 
@@ -60,6 +61,7 @@ def delete_resto(restaurant_id):
     else:
         return render_template("delete_resto.html",restaurant=restaurant)
 
+@app.route("/restaurants/<int:restaurant_id>/",methods=['GET', 'POST'])
 @app.route("/restaurants/<int:restaurant_id>/menu/",methods=['GET', 'POST'])
 def resto_menu(restaurant_id):
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
